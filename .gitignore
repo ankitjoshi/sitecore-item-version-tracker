@@ -1,0 +1,15 @@
+[Oo]bj/
+src/**/[Bb]in/
+specs/**/[Bb]in/
+.nuget/
+_ReSharper.*
+packages/
+.vs
+*.user
+
+
+
+
+
+
+

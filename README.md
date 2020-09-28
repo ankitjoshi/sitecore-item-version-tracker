@@ -31,13 +31,13 @@ Once the package is installed- tool can be accessed here- http://yourhostname/si
 
 It has following parameters:
 
-**Root Path–** This contains the root path of the item which you want to check, this also support item GUID.
-**Include Child Items-** Checkbox to include child items also.
-**Content Type-** Content Type filter has been added to filter it based on Page/Non-page items like data items/module/image items etc..
-**Language-** Language filter to get item details based on specific language, this would show all the languages available under System->Languages.
-**Filter By-** here we have two filters available:
-**“Latest Version is not published“-** This would list down all the language version items which is still not published to target database.
-**“Max Version“-** This would filter all those language versions where more than 10 (this can be changed) versions has been created.
+1) **Root Path–** This contains the root path of the item which you want to check, this also support item GUID.
+2) **Include Child Items-** Checkbox to include child items also.
+3) **Content Type-** Content Type filter has been added to filter it based on Page/Non-page items like data items/module/image items etc..
+4) **Language-** Language filter to get item details based on specific language, this would show all the languages available under System->Languages.
+5) **Filter By-** here we have two filters available:
+5.1) **“Latest Version is not published“-** This would list down all the language version items which is still not published to target database.
+5.2) **“Max Version“-** This would filter all those language versions where more than 10 (this can be changed) versions has been created.
 
 
 For example- If I want to test an item which is created under Home item and has multiple language versions, this is how it looks.
@@ -54,6 +54,7 @@ The listing has following details:
 6) **Latest Version Live–** This shows if the latest version exists in Source DB (master) has been published or not.
 7) **Live Version-** This give the language version no. which is published to live database.
 
+
 If we include child items also by checking **“Include Child Items”** this is what we would see.
 
 ![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-2.JPG)
@@ -62,14 +63,17 @@ If we include child items also by checking **“Include Child Items”** this is
 If we want to get all the language versions where more than 10 numbered versions exists we can select “Filter By” -> Max Versions, you can change the max version count by updating the same in “Sitecore.SharedSource.ItemVersionTracker.Settings.config“
 
 **Download the Report**
+
 To download the report- just select the values and filters and click on "Download Report (CSV)" button.
 
 ## Screen shots
 
-### Item Version Tracker
+### Sitecore Item Version Tracker
 ![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-3.JPG)
 
+
 ![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-4.JPG)
+
 
 ![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-5.JPG)
 

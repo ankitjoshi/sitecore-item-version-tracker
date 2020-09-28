@@ -5,89 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Sitecore Item Version Tracker</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <asp:ScriptManager ID="scrptManagerVersionTracker" runat="server"></asp:ScriptManager>
-        <div class="page-title">
-            Sitecore Item Version Tracker
-        </div>
-        <div class="form-section">
-            <div>
-                <span id="lblContentRootPath">Enter root path(page/data):<div class="error-message">
-                    <asp:Label ID="lblContentError" runat="server"></asp:Label>
-                </div>
-                </span>
-                <asp:TextBox ID="txtContentRootPath" runat="server" ToolTip="Enter content root path or ID to search"></asp:TextBox>
-
-                <span id="lblIncludeChildItems">Include Child Items:<div class="error-message">
-                    <asp:Label ID="lblIncludeChildItemsError" runat="server"></asp:Label>
-                </div>
-                </span>
-                <asp:CheckBox ID="chkBoxIncludeChildItems" runat="server"></asp:CheckBox>
-            </div>
-            <div class="filter-section">
-                <span id="lblContentTyperBy">Content Type:<div class="error-message">
-                    <asp:Label ID="lblContentTyperError" runat="server"></asp:Label>
-                </div>
-                </span>
-                <asp:DropDownList runat="server" ID="ddlContentType" ToolTip="Select the content type (Page/Non Page Item)">
-                    <asp:ListItem>--Select--</asp:ListItem>
-                    <asp:ListItem Value="0" Text="Only Page item(s)"></asp:ListItem>
-                    <asp:ListItem Value="1" Text="Non Page item(s)"></asp:ListItem>
-                </asp:DropDownList>
-
-                <span id="lblLanguage">Language:<div class="error-message">
-                    <asp:Label ID="Label2" runat="server"></asp:Label>
-                </div>
-                </span>
-                <asp:DropDownList runat="server" ID="ddlLanguage" ToolTip="Select the language">
-                </asp:DropDownList>
-
-                <span id="lblFilterBy">Filter By:<div class="error-message">
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
-                </div>
-                </span>
-                <asp:DropDownList runat="server" ID="ddlFilterBy" ToolTip="Select the filter">
-                    <asp:ListItem>--Select--</asp:ListItem>
-                    <asp:ListItem Value="0" Text="Latest version is not published"></asp:ListItem>
-                    <asp:ListItem Value="1" Text="Max Versions"></asp:ListItem>
-                </asp:DropDownList>
-            </div>
-
-            <div class="report">
-                <asp:Button ID="btnDownloadReport" CssClass="download-report" runat="server" Text="Download Report (CSV)" OnClick="btnDownloadReport_Click" ToolTip="Download the report in CSV format" />
-                <asp:Button ID="btnGenerateReport" runat="server" Text="Generate Report" OnClick="btnGenerateReport_Click" ToolTip="Generate the Report" />
-            </div>
-
-            <div class="notes">
-                <p>Note(s):</p>
-                <ul>
-                    <li>Mouse hover on the item name to get item path.</li>
-                    <li>Language version is not published to target database if Live version is set to zero (0).</li>
-                    <li>"Max Versions" would filter all language versions where more than x(Sitecore recommends it to be 10) no of versions has been created, and this (x) can be controlled via setting in config file.</li>
-                    <li>Click on Item ID and it would redirect you to selected item in Content editor.</li>
-                </ul>
-            </div>
-
-        </div>
-        <asp:Literal ID="ltlReport" runat="server" />
-        <br />
-        <br />
-
-        <div class="footer">
-            <div class="footer-left">
-                <br />
-                <div id="currentDate"></div>
-            </div>
-            <div class="footer-right">
-                <div>
-                    <asp:Label ID="lblToolVersion" Font-Bold="True" ForeColor="white" runat="server"></asp:Label>
-                </div>
-            </div>
-        </div>
-    </form>
-
     <style>
         body {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -284,29 +201,11 @@
                 transform: translate(-50%, -50%);
             }
 
-        .information {
-            background: #161c27;
-            padding: 5px 10px;
-            position: fixed;
-            right: 0;
-            width: 300px;
-            color: #fff;
-            top: 100px;
-            right: -266px;
-        }
-
         .fa-info-circle {
             font-size: 40px;
             color: red;
             vertical-align: middle;
             cursor: pointer;
-        }
-
-        .information-text {
-            display: inline-block;
-            width: 200px;
-            padding-left: 15px;
-            vertical-align: middle;
         }
 
         .status-YES {
@@ -347,7 +246,7 @@
                 font-weight: bold;
                 padding-left: 10px;
             }
-        /* New CSS */
+
         .form-section div.report {
             padding: 10px 20px;
             box-sizing: border-box;
@@ -373,9 +272,95 @@
 
         .form-section div span {
             width: auto;
-            text-align: right;
+            text-align: left;
             padding-top: 8px;
         }
+		.form-section span div {
+			display: block;
+		}
+
     </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="scrptManagerVersionTracker" runat="server"></asp:ScriptManager>
+        <div class="page-title">
+            Sitecore Item Version Tracker
+        </div>
+        <div class="form-section">
+            <div>
+                <span id="lblContentRootPath">Enter root path(page/data):<div class="error-message">
+                    <asp:Label ID="lblContentError" runat="server"></asp:Label>
+                </div>
+                </span>
+                <asp:TextBox ID="txtContentRootPath" runat="server" ToolTip="Enter content root path or ID to search"></asp:TextBox>
+
+                <span id="lblIncludeChildItems">Include Child Items:<div class="error-message">
+                    <asp:Label ID="lblIncludeChildItemsError" runat="server"></asp:Label>
+                </div>
+                </span>
+                <asp:CheckBox ID="chkBoxIncludeChildItems" runat="server"></asp:CheckBox>
+            </div>
+            <div class="filter-section">
+                <span id="lblContentTyperBy">Content Type:<div class="error-message">
+                    <asp:Label ID="lblContentTyperError" runat="server"></asp:Label>
+                </div>
+                </span>
+                <asp:DropDownList runat="server" ID="ddlContentType" ToolTip="Select the content type (Page/Non Page Item)">
+                    <asp:ListItem>--Select--</asp:ListItem>
+                    <asp:ListItem Value="0" Text="Only Page item(s)"></asp:ListItem>
+                    <asp:ListItem Value="1" Text="Non Page item(s)"></asp:ListItem>
+                </asp:DropDownList>
+
+                <span id="lblLanguage">Language:<div class="error-message">
+                    <asp:Label ID="Label2" runat="server"></asp:Label>
+                </div>
+                </span>
+                <asp:DropDownList runat="server" ID="ddlLanguage" ToolTip="Select the language">
+                </asp:DropDownList>
+
+                <span id="lblFilterBy">Filter By:<div class="error-message">
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                </div>
+                </span>
+                <asp:DropDownList runat="server" ID="ddlFilterBy" ToolTip="Select the filter">
+                    <asp:ListItem>--Select--</asp:ListItem>
+                    <asp:ListItem Value="0" Text="Latest version is not published"></asp:ListItem>
+                    <asp:ListItem Value="1" Text="Max Versions"></asp:ListItem>
+                </asp:DropDownList>
+            </div>
+
+            <div class="report">
+                <asp:Button ID="btnDownloadReport" CssClass="download-report" runat="server" Text="Download Report (CSV)" OnClick="btnDownloadReport_Click" ToolTip="Download the report in CSV format" />
+                <asp:Button ID="btnGenerateReport" runat="server" Text="Generate Report" OnClick="btnGenerateReport_Click" ToolTip="Generate the Report" />
+            </div>
+
+            <div class="notes">
+                <p>Note(s):</p>
+                <ul>
+                    <li>Mouse hover on the item name to get item path.</li>
+                    <li>Language version is not published to target database if "Live Version" is set to zero (0).</li>
+                    <li>"Max Versions" would filter all language versions where more than x(Recommendation is to have max 10 numbered versions) no of versions has been created, and this (x) can be controlled via setting in config file.</li>
+                    <li>Click on Item ID and it would redirect you to selected item in Content editor.</li>
+                </ul>
+            </div>
+
+        </div>
+        <asp:Literal ID="ltlReport" runat="server" />
+        <br />
+        <br />
+
+        <div class="footer">
+            <div class="footer-left">
+                <br />
+                <div id="currentDate"></div>
+            </div>
+            <div class="footer-right">
+                <div>
+                    <asp:Label ID="lblToolVersion" Font-Bold="True" ForeColor="white" runat="server"></asp:Label>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
 </html>

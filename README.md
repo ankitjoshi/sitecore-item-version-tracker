@@ -27,7 +27,7 @@ Once the package is installed- tool can be accessed here- http://yourhostname/si
 
 **How to Use:**
 
-![sitecore-item-version-tracker](src/Feature/images/ItemVersionTracker/TrackerDefault.JPG)
+![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerDefault.JPG)
 
 It has following parameters:
 
@@ -42,7 +42,7 @@ It has following parameters:
 
 For example- If I want to test an item which is created under Home item and has multiple language versions, this is how it looks.
 
-![sitecore-item-version-tracker](src/Feature/images/ItemVersionTracker/TrackerResult-1.JPG)
+![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-1.JPG)
 
 The listing has following details:
 
@@ -56,7 +56,7 @@ The listing has following details:
 
 If we include child items also by checking **“Include Child Items”** this is what we would see.
 
-![sitecore-item-version-tracker](src/Feature/images/ItemVersionTracker/TrackerResult-2.JPG)
+![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-2.JPG)
 
 
 If we want to get all the language versions where more than 10 numbered versions exists we can select “Filter By” -> Max Versions, you can change the max version count by updating the same in “Sitecore.SharedSource.ItemVersionTracker.Settings.config“
@@ -67,10 +67,10 @@ To download the report- just select the values and filters and click on "Downloa
 ## Screen shots
 
 ### Item Version Tracker
-![sitecore-item-version-tracker](src/Feature/images/ItemVersionTracker/TrackerResult-3.JPG)
+![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-3.JPG)
 
-![sitecore-item-version-tracker](src/Feature/images/ItemVersionTracker/TrackerResult-4.JPG)
+![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-4.JPG)
 
-![sitecore-item-version-tracker](src/Feature/images/ItemVersionTracker/TrackerResult-5.JPG)
+![sitecore-item-version-tracker](src/Feature/ItemVersionTracker/images/TrackerResult-5.JPG)
 
 

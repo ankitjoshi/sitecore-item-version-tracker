@@ -213,6 +213,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\TrackerDefault.JPG" />
+    <Content Include="images\TrackerResult-1.JPG" />
+    <Content Include="images\TrackerResult-2.JPG" />
+    <Content Include="images\TrackerResult-3.JPG" />
+    <Content Include="images\TrackerResult-4.JPG" />
+    <Content Include="images\TrackerResult-5.JPG" />
     <Content Include="sitecore\admin\ItemVersionTracker.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
